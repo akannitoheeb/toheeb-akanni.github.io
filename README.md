@@ -1,1 +1,622 @@
-# toheeb-akanni.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Akanni Toheeb Mohammed — Email Marketing & Web Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0a0f1e;
+      --navy-mid: #111827;
+      --navy-light: #1a2540;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --cream: #f5f0e8;
+      --cream-dark: #e8e0d0;
+      --white: #ffffff;
+      --text-muted: #8a9bb0;
+      --border: rgba(201,168,76,0.2);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy);
+      color: var(--cream);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 6%;
+      background: rgba(10,15,30,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-weight: 600; letter-spacing: 0.05em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      color: var(--cream-dark); text-decoration: none;
+      font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 8rem 6% 5rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center; width: 100%; position: relative;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block; width: 40px; height: 1px; background: var(--gold);
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      font-weight: 300; line-height: 1.1;
+      color: var(--white); margin-bottom: 1rem;
+    }
+    .hero h1 em { color: var(--gold); font-style: italic; }
+    .hero-sub {
+      font-size: 1rem; color: var(--text-muted);
+      max-width: 420px; margin-bottom: 2.5rem; line-height: 1.8;
+    }
+    .hero-cta {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--gold); color: var(--navy);
+      padding: 0.85rem 2rem; border: none; cursor: pointer;
+      font-family: 'DM Sans', sans-serif; font-size: 0.82rem;
+      letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
+      text-decoration: none; display: inline-block;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent; color: var(--cream);
+      padding: 0.85rem 2rem; border: 1px solid var(--border); cursor: pointer;
+      font-family: 'DM Sans', sans-serif; font-size: 0.82rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; display: inline-block;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    }
+    .stat-card {
+      border: 1px solid var(--border);
+      padding: 1.8rem 1.5rem;
+      background: rgba(255,255,255,0.02);
+      position: relative; overflow: hidden;
+    }
+    .stat-card::after {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 3px; height: 100%; background: var(--gold);
+    }
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem; font-weight: 600;
+      color: var(--gold); line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.78rem; color: var(--text-muted);
+      letter-spacing: 0.08em; margin-top: 0.4rem;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 7rem 6%; }
+    .section-label {
+      font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .section-label::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(to right, var(--border), transparent);
+      max-width: 80px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300; color: var(--white); line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .section-title em { color: var(--gold); font-style: italic; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--navy-mid); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1.6fr;
+      gap: 5rem; align-items: start; margin-top: 3rem;
+    }
+    .about-aside {
+      position: sticky; top: 8rem;
+    }
+    .about-card {
+      background: var(--navy-light);
+      border: 1px solid var(--border); padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .about-card h4 {
+      font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.8rem;
+    }
+    .about-card p { font-size: 0.9rem; color: var(--cream-dark); line-height: 1.7; }
+    .about-text p {
+      color: var(--cream-dark); margin-bottom: 1.5rem;
+      font-size: 1rem; line-height: 1.9;
+    }
+    .about-text p:first-child {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-weight: 300; color: var(--white); font-style: italic;
+    }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--navy); }
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .skill-group {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+      padding: 2rem; position: relative;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .skill-group:hover {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.04);
+    }
+    .skill-group-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; color: var(--gold);
+      margin-bottom: 1.2rem; font-weight: 400;
+    }
+    .skill-list { list-style: none; }
+    .skill-list li {
+      font-size: 0.85rem; color: var(--cream-dark);
+      padding: 0.35rem 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .skill-list li::before {
+      content: '–'; color: var(--gold); font-size: 0.7rem;
+    }
+
+    /* ── ACHIEVEMENTS ── */
+    #achievements { background: var(--navy-mid); }
+    .achieve-intro {
+      max-width: 600px; color: var(--text-muted); margin-bottom: 3rem;
+    }
+    .achieve-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .achieve-card {
+      background: var(--navy-light); border: 1px solid var(--border);
+      padding: 2rem; position: relative; overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .achieve-card:hover { transform: translateY(-4px); }
+    .achieve-card::before {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2px; background: linear-gradient(to right, var(--gold), transparent);
+    }
+    .achieve-icon {
+      font-size: 1.8rem; margin-bottom: 1rem; display: block;
+    }
+    .achieve-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; color: var(--white); margin-bottom: 0.6rem;
+    }
+    .achieve-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; }
+    .achieve-highlight {
+      color: var(--gold); font-weight: 500; font-size: 0.9rem;
+    }
+
+    /* ── WHO I SERVE ── */
+    #audience { background: var(--navy); }
+    .audience-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+      align-items: start; margin-top: 3rem;
+    }
+    .audience-text p {
+      color: var(--cream-dark); margin-bottom: 1.2rem; font-size: 0.95rem;
+    }
+    .serve-list { list-style: none; margin-top: 1.5rem; }
+    .serve-list li {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 0.9rem 0; border-bottom: 1px solid var(--border);
+      font-size: 0.9rem; color: var(--cream-dark);
+    }
+    .serve-list li span.dot {
+      width: 6px; height: 6px; background: var(--gold);
+      border-radius: 50%; margin-top: 0.55rem; flex-shrink: 0;
+    }
+    .brands-worked {
+      border: 1px solid var(--border); padding: 2.5rem;
+      background: rgba(201,168,76,0.03);
+    }
+    .brands-worked h4 {
+      font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.5rem;
+    }
+    .brand-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+    .brand-tag {
+      border: 1px solid var(--border); padding: 0.5rem 1.2rem;
+      font-size: 0.82rem; color: var(--cream-dark); letter-spacing: 0.05em;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--navy-light);
+      border-top: 1px solid var(--border);
+    }
+    .contact-inner {
+      max-width: 760px; margin: 0 auto; text-align: center;
+    }
+    .contact-inner .section-label { justify-content: center; }
+    .contact-inner .section-label::after { display: none; }
+    .contact-intro {
+      color: var(--text-muted); max-width: 500px;
+      margin: 1rem auto 3rem; font-size: 0.95rem;
+    }
+    .contact-methods {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .contact-pill {
+      display: flex; align-items: center; gap: 0.6rem;
+      border: 1px solid var(--border); padding: 0.7rem 1.4rem;
+      color: var(--cream-dark); text-decoration: none; font-size: 0.85rem;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .contact-pill:hover { border-color: var(--gold); color: var(--gold); }
+    .contact-pill .label {
+      font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-muted); display: block; margin-bottom: 0.1rem;
+    }
+    .divider {
+      border: none; border-top: 1px solid var(--border); margin: 2rem 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy); padding: 2rem 6%;
+      display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid var(--border); flex-wrap: wrap; gap: 1rem;
+    }
+    footer p { font-size: 0.78rem; color: var(--text-muted); }
+    .footer-socials { display: flex; gap: 1.5rem; }
+    .footer-socials a {
+      font-size: 0.78rem; color: var(--text-muted); text-decoration: none;
+      letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s;
+    }
+    .footer-socials a:hover { color: var(--gold); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-content > * { animation: fadeUp 0.8s ease forwards; opacity: 0; }
+    .hero-eyebrow { animation-delay: 0.1s; }
+    .hero h1 { animation-delay: 0.25s; }
+    .hero-sub { animation-delay: 0.4s; }
+    .hero-cta { animation-delay: 0.55s; }
+    .hero-stats { animation-delay: 0.7s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-grid, .about-grid, .audience-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-aside { position: static; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      nav { padding: 1rem 5%; }
+      .nav-links { gap: 1.5rem; }
+    }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      section { padding: 5rem 5%; }
+      .hero { padding: 7rem 5% 4rem; }
+      .hero-stats { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">ATM</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#audience">Who I Serve</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Digital Marketing Professional</p>
+      <h1>Akanni<br/><em>Toheeb</em><br/>Mohammed</h1>
+      <p class="hero-sub">
+        Email Marketing Strategist & Website Designer helping businesses build a strong online presence, drive engagement, and grow revenue through data-driven digital solutions.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">Work With Me</a>
+        <a href="#about" class="btn-outline">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-number">89%</div>
+        <div class="stat-label">Peak Email Open Rate Achieved</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">4K+</div>
+        <div class="stat-label">Leads Generated for Clients</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">75%</div>
+        <div class="stat-label">Sales Growth Driven by Campaigns</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">4 Yrs</div>
+        <div class="stat-label">Hands-On Industry Experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About Me</div>
+  <div class="about-grid">
+    <div class="about-aside">
+      <div class="about-card">
+        <h4>Location</h4>
+        <p>Lagos, Nigeria</p>
+      </div>
+      <div class="about-card">
+        <h4>Education</h4>
+        <p>Water Resources Management & Agrometeorology<br/>Federal University of Agriculture and Development Studies, Iragbiji (FUADSI)</p>
+      </div>
+      <div class="about-card">
+        <h4>Specialisations</h4>
+        <p>Email Marketing Strategy<br/>Website Design & Development<br/>Digital Marketing</p>
+      </div>
+      <div class="about-card">
+        <h4>Availability</h4>
+        <p>Open to freelance projects, collaborations & long-term partnerships.</p>
+      </div>
+    </div>
+    <div class="about-text">
+      <h2 class="section-title">A <em>digital professional</em> shaped by Lagos & driven by results</h2>
+      <p>Born and raised in Lagos, Nigeria — a city built on energy, innovation, and entrepreneurial spirit — I was wired early to think creatively and chase opportunities through technology and digital communication.</p>
+      <p>Four years ago, I discovered the power of digital marketing and never looked back. What began as curiosity quickly grew into a disciplined career in email marketing and website design. I've since helped businesses connect with their audiences, convert leads, and grow their revenue through campaigns and websites that are built not just to look good — but to perform.</p>
+      <p>While pursuing my degree in Water Resources Management and Agrometeorology at FUADSI, I've simultaneously built a strong foundation in digital marketing, demonstrating that passion and commitment can transcend boundaries. I combine creativity, strategy, and technical expertise to deliver measurable results — and I believe that learning is a lifelong journey that never stops.</p>
+      <p>Today, my work sits at the intersection of creativity and strategy. Every email campaign I craft and every website I design is built with one goal: to help your brand communicate effectively, grow sustainably, and make a lasting impression.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Expertise</div>
+  <h2 class="section-title">Skills & <em>Capabilities</em></h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title">Email Marketing</div>
+      <ul class="skill-list">
+        <li>Email Campaign Strategy & Planning</li>
+        <li>Email Copywriting</li>
+        <li>Email Automation & Workflows</li>
+        <li>Audience Segmentation</li>
+        <li>Lead Nurturing</li>
+        <li>Newsletter Design & Management</li>
+        <li>A/B Testing & Optimization</li>
+        <li>Email Performance Analysis</li>
+        <li>Customer Retention Strategies</li>
+        <li>Conversion Rate Optimization</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Website Design</div>
+      <ul class="skill-list">
+        <li>Responsive Website Design</li>
+        <li>Landing Page Design</li>
+        <li>WordPress Development</li>
+        <li>Website Optimization</li>
+        <li>Mobile-Friendly Design</li>
+        <li>Website Content Management</li>
+        <li>Conversion-Focused Web Design</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Digital Marketing</div>
+      <ul class="skill-list">
+        <li>Digital Marketing Strategy</li>
+        <li>Lead Generation</li>
+        <li>Social Media Integration</li>
+        <li>Marketing Analytics</li>
+        <li>Brand Communication</li>
+        <li>Customer Journey Mapping</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Professional Skills</div>
+      <ul class="skill-list">
+        <li>Problem Solving</li>
+        <li>Creative Thinking</li>
+        <li>Attention to Detail</li>
+        <li>Project Management</li>
+        <li>Communication Skills</li>
+        <li>Team Collaboration</li>
+        <li>Time Management</li>
+        <li>Continuous Learning</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="section-label">Track Record</div>
+  <h2 class="section-title">Key <em>Achievements</em></h2>
+  <p class="achieve-intro">Over four years of hands-on experience, I have consistently delivered results that go beyond expectations — for real businesses, with real numbers.</p>
+  <div class="achieve-grid">
+    <div class="achieve-card">
+      <span class="achieve-icon">📧</span>
+      <h3>Industry-Leading Open Rates</h3>
+      <p>Managed and optimised email campaigns achieving <span class="achieve-highlight">70%–89% open rates</span>, far exceeding the industry average of 20–25%.</p>
+    </div>
+    <div class="achieve-card">
+      <span class="achieve-icon">🚀</span>
+      <h3>4,000+ Leads Generated</h3>
+      <p>Contributed to campaigns that generated <span class="achieve-highlight">over 4,000 qualified leads</span>, expanding customer pipelines and sales opportunities for clients.</p>
+    </div>
+    <div class="achieve-card">
+      <span class="achieve-icon">📈</span>
+      <h3>75% Sales Growth</h3>
+      <p>Helped drive campaign performance resulting in <span class="achieve-highlight">up to 75% sales growth</span> through strategic email marketing and engagement initiatives.</p>
+    </div>
+    <div class="achieve-card">
+      <span class="achieve-icon">🌐</span>
+      <h3>4 Professional Websites Launched</h3>
+      <p>Designed and launched <span class="achieve-highlight">4 professional websites</span> focused on user experience, brand visibility, and conversion optimisation.</p>
+    </div>
+    <div class="achieve-card">
+      <span class="achieve-icon">👥</span>
+      <h3>2,000+ Subscriber Lists</h3>
+      <p>Grew and managed email subscriber lists with <span class="achieve-highlight">more than 2,000 engaged subscribers</span>, sustained through automation and targeted communication.</p>
+    </div>
+    <div class="achieve-card">
+      <span class="achieve-icon">🤝</span>
+      <h3>Trusted by Leading Brands</h3>
+      <p>Delivered marketing results for <span class="achieve-highlight">Capifund, Marketing 360, Moonshot, and Business Funding</span>, supporting their growth and digital presence.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHO I SERVE -->
+<section id="audience">
+  <div class="section-label">Who I Serve</div>
+  <div class="audience-grid">
+    <div class="audience-text">
+      <h2 class="section-title">The right <em>partner</em> for ambitious brands</h2>
+      <p>I work with businesses and organisations that are serious about strengthening their online presence, generating quality leads, and building meaningful customer relationships through strategic email marketing and effective website design.</p>
+      <p>My ideal clients understand the value of digital marketing and are looking for a dedicated professional who can combine creativity, strategy, and technical expertise to deliver real, measurable results.</p>
+      <ul class="serve-list">
+        <li><span class="dot"></span>Small and medium-sized businesses (SMBs)</li>
+        <li><span class="dot"></span>Startups and growing companies</li>
+        <li><span class="dot"></span>Financial service providers and funding organisations</li>
+        <li><span class="dot"></span>E-commerce brands</li>
+        <li><span class="dot"></span>Coaches, consultants, and personal brands</li>
+        <li><span class="dot"></span>Marketing agencies seeking email marketing support</li>
+        <li><span class="dot"></span>Non-profit organisations and community initiatives</li>
+        <li><span class="dot"></span>Entrepreneurs focused on growth and conversions</li>
+      </ul>
+    </div>
+    <div>
+      <div class="brands-worked">
+        <h4>Brands I've Worked With</h4>
+        <div class="brand-tags">
+          <span class="brand-tag">Capifund</span>
+          <span class="brand-tag">Marketing 360</span>
+          <span class="brand-tag">Moonshot</span>
+          <span class="brand-tag">Business Funding</span>
+        </div>
+      </div>
+      <div style="border: 1px solid var(--border); padding: 2.5rem; margin-top: 1.5rem; background: rgba(201,168,76,0.03);">
+        <h4 style="font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;">How I Help</h4>
+        <p style="font-size: 0.88rem; color: var(--cream-dark); line-height: 1.8;">I help businesses attract, engage, and retain customers by creating high-converting websites and data-driven email marketing campaigns. Whether building a responsive website, creating automated email sequences, or optimising customer journeys — I'm passionate about helping brands grow sustainably.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Let's <em>Work Together</em></h2>
+    <p class="contact-intro">I'd love to connect and discuss opportunities in email marketing, website design, and digital growth. Reach out for collaborations, freelance projects, or business inquiries.</p>
+    <div class="contact-methods">
+      <a href="mailto:akannitoheeb08@gmail.com" class="contact-pill">
+        <div>
+          <span class="label">Email</span>
+          akannitoheeb08@gmail.com
+        </div>
+      </a>
+      <a href="tel:+2348149493902" class="contact-pill">
+        <div>
+          <span class="label">Phone</span>
+          +234 814 949 3902
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/toheebakanni" target="_blank" class="contact-pill">
+        <div>
+          <span class="label">LinkedIn</span>
+          toheebakanni
+        </div>
+      </a>
+      <a href="https://instagram.com/real_toheeb" target="_blank" class="contact-pill">
+        <div>
+          <span class="label">Instagram</span>
+          @real_toheeb
+        </div>
+      </a>
+    </div>
+    <a href="mailto:akannitoheeb08@gmail.com" class="btn-primary">Send Me an Email</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Akanni Toheeb Mohammed · Lagos, Nigeria</p>
+  <div class="footer-socials">
+    <a href="https://www.linkedin.com/in/toheebakanni" target="_blank">LinkedIn</a>
+    <a href="https://instagram.com/real_toheeb" target="_blank">Instagram</a>
+    <a href="mailto:akannitoheeb08@gmail.com">Email</a>
+  </div>
+</footer>
+
+</body>
+</html>
