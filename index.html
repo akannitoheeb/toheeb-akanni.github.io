@@ -215,6 +215,51 @@
     }
     .skill-list li::before { content: '–'; color: var(--gold); font-size: 0.7rem; }
 
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: var(--blue); }
+    .testimonials-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .testimonial-card {
+      background: rgba(255,255,255,0.6);
+      border: 1px solid var(--border-dark);
+      padding: 2.5rem; position: relative;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .testimonial-card.featured { border-color: var(--gold); }
+    .testimonial-card:hover { transform: translateY(-4px); }
+    .testimonial-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem; color: var(--gold); line-height: 0.8;
+      margin-bottom: 1rem; opacity: 0.5;
+    }
+    .testimonial-text {
+      font-size: 1rem; color: var(--dark);
+      line-height: 1.8; margin-bottom: 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-size: 1.1rem;
+    }
+    .testimonial-footer {
+      border-top: 1px solid var(--border-dark);
+      padding-top: 1rem;
+      display: flex; flex-direction: column; gap: 0.8rem;
+    }
+    .testimonial-name {
+      font-weight: 500; font-size: 0.9rem;
+      color: var(--dark); display: block;
+    }
+    .testimonial-role {
+      font-size: 0.78rem; color: var(--text-muted);
+      letter-spacing: 0.05em; display: block;
+    }
+    .testimonial-services { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .service-tag {
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid var(--border);
+      padding: 0.2rem 0.6rem;
+    }
+
     /* ── PORTFOLIO ── */
     #portfolio { background: var(--dark); }
     #portfolio .section-title { color: var(--white); }
@@ -380,6 +425,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
     <li><a href="#achievements">Achievements</a></li>
     <li><a href="#audience">Who I Serve</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -561,6 +607,43 @@
         <h3>Toheeb Akanni Portfolio</h3>
         <p>This very website — a professional personal brand portfolio designed and built from scratch to showcase my expertise in email marketing and website design, and attract quality clients and collaborations.</p>
         <a href="https://toheebakanni.name.ng" target="_blank" class="portfolio-link">View Live Site →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-label">Client Words</div>
+  <h2 class="section-title">What Clients <em>Say</em></h2>
+  <p class="achieve-intro">Real feedback from real clients. Nothing speaks louder than results.</p>
+  <div class="testimonials-grid">
+
+    <div class="testimonial-card featured">
+      <div class="testimonial-quote">"</div>
+      <p class="testimonial-text">This is brilliant, I love it. Toheeb delivered exactly what we needed — a beautiful, functional website that truly represents our brand. Working with him was seamless from start to finish.</p>
+      <div class="testimonial-footer">
+        <div class="testimonial-info">
+          <span class="testimonial-name">Tobi Akanni</span>
+          <span class="testimonial-role">CEO · Stylebyplussy & RectangleHQ</span>
+        </div>
+        <div class="testimonial-services">
+          <span class="service-tag">Website Design</span>
+          <span class="service-tag">Email Marketing</span>
+          <span class="service-tag">Social Media</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card placeholder">
+      <div class="testimonial-quote">"</div>
+      <p class="testimonial-text" style="opacity: 0.4; font-style: italic;">More client testimonials coming soon. I am currently collecting feedback from brands I have worked with.</p>
+      <div class="testimonial-footer">
+        <div class="testimonial-info">
+          <span class="testimonial-name" style="opacity:0.4;">Your business here</span>
+          <span class="testimonial-role" style="opacity:0.4;">Let's work together</span>
+        </div>
       </div>
     </div>
 
