@@ -121,29 +121,56 @@
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
-      padding: 1.2rem 6%;
-      background: rgba(13,27,42,0.92);
+      padding: 1rem 5%;
+      background: rgba(13,27,42,0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.6rem; font-weight: 600; letter-spacing: 0.05em;
-      color: var(--gold); text-decoration: none;
+      color: var(--gold); text-decoration: none; flex-shrink: 0;
     }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: nowrap; }
     .nav-links a {
       color: var(--blue); text-decoration: none;
-      font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
-      transition: color 0.3s;
+      font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: color 0.3s; white-space: nowrap;
     }
     .nav-links a:hover { color: var(--gold); }
+
+    /* Mobile hamburger menu */
+    .nav-toggle {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px;
+    }
+    .nav-toggle span {
+      display: block; width: 24px; height: 2px;
+      background: var(--blue); transition: all 0.3s;
+    }
+    .mobile-menu {
+      display: none; position: fixed;
+      top: 60px; left: 0; right: 0;
+      background: rgba(13,27,42,0.98);
+      padding: 1.5rem 5%; z-index: 99;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .mobile-menu ul li a {
+      display: block; padding: 0.9rem 0;
+      color: var(--blue); text-decoration: none;
+      font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: color 0.3s;
+    }
+    .mobile-menu ul li a:hover { color: var(--gold); }
 
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
       display: flex; align-items: center;
-      padding: 8rem 6% 5rem;
+      padding: 6rem 6% 4rem;
       position: relative; overflow: hidden;
       background: linear-gradient(135deg, var(--blue) 0%, #d4f3ff 100%);
     }
@@ -585,12 +612,25 @@
       .about-aside { position: static; }
       .hero-stats { grid-template-columns: 1fr 1fr; }
     }
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .nav-links { display: none; }
-      section { padding: 5rem 5%; }
-      .hero { padding: 7rem 5% 4rem; }
-      .hero-stats { grid-template-columns: 1fr; }
+      .nav-toggle { display: flex; }
+      .hero { padding: 5rem 5% 3rem; min-height: auto; }
+      .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      section { padding: 4rem 5%; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 3.5rem 5%; }
+      .hero { padding: 4.5rem 5% 3rem; }
+      .hero-stats { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .stat-number { font-size: 2rem; }
       footer { flex-direction: column; text-align: center; }
+      .form-row { grid-template-columns: 1fr; }
+      .service-packages-grid { grid-template-columns: 1fr; }
+      .achieve-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
     }
   </style>
   <!-- Google Analytics -->
@@ -626,7 +666,33 @@
     <li><a href="#audience">Who I Serve</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <div class="nav-toggle" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#about" onclick="closeMenu()">About</a></li>
+    <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+    <li><a href="#services" onclick="closeMenu()">Services</a></li>
+    <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
+    <li><a href="#testimonials" onclick="closeMenu()">Testimonials</a></li>
+    <li><a href="#achievements" onclick="closeMenu()">Achievements</a></li>
+    <li><a href="#audience" onclick="closeMenu()">Who I Serve</a></li>
+    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+  </ul>
+</div>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+</script>
 
 <!-- HERO -->
 <section class="hero">
