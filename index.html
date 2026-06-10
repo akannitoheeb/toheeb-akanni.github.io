@@ -524,6 +524,53 @@
       background: rgba(255,255,255,0.6);
     }
 
+    /* ── FAQ ── */
+    #faq { background: var(--blue); }
+    .faq-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin-top: 3rem;
+    }
+    .faq-item {
+      background: rgba(255,255,255,0.6);
+      border: 1px solid var(--border-dark);
+      overflow: hidden; transition: border-color 0.3s;
+    }
+    .faq-item:hover { border-color: var(--gold); }
+    .faq-question {
+      width: 100%; background: none; border: none;
+      padding: 1.3rem 1.5rem; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; text-align: left;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .faq-question span {
+      font-size: 0.9rem; color: var(--dark);
+      font-weight: 400; line-height: 1.5;
+    }
+    .faq-icon {
+      font-size: 1.2rem; color: var(--gold);
+      flex-shrink: 0; font-weight: 300;
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s;
+      padding: 0 1.5rem;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding: 0 1.5rem 1.3rem;
+    }
+    .faq-answer p {
+      font-size: 0.85rem; color: var(--text-muted);
+      line-height: 1.8; border-top: 1px solid var(--border-dark);
+      padding-top: 1rem;
+    }
+    @media (max-width: 768px) {
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── CONTACT FORM ── */
     .contact-form {
       margin-top: 3rem; text-align: left;
@@ -669,6 +716,7 @@
     <li><a href="#testimonials">Testimonials</a></li>
     <li><a href="#achievements">Achievements</a></li>
     <li><a href="#audience">Who I Serve</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-toggle" onclick="toggleMenu()">
@@ -686,6 +734,7 @@
     <li><a href="#testimonials" onclick="closeMenu()">Testimonials</a></li>
     <li><a href="#achievements" onclick="closeMenu()">Achievements</a></li>
     <li><a href="#audience" onclick="closeMenu()">Who I Serve</a></li>
+    <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
     <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
   </ul>
 </div>
@@ -696,6 +745,12 @@
   }
   function closeMenu() {
     document.getElementById('mobileMenu').classList.remove('open');
+  }
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
   }
 </script>
 
@@ -1150,6 +1205,182 @@
     </div>
   </div>
 </section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-label">Common Questions</div>
+  <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+  <p class="achieve-intro">Everything you need to know before we work together. Can't find your answer? Send me a message!</p>
+
+  <div class="faq-grid">
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>What services do you offer?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>I offer two core services: Email Marketing (strategy, copywriting, automation, campaigns, and analytics) and WordPress Website Design (responsive websites, landing pages, e-commerce, and conversion-focused design). I also provide digital marketing strategy and social media integration.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>How much do your services cost?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Pricing depends on the scope and complexity of your project. I offer flexible packages for both email marketing and website design. Rather than fixed rates, I prefer to understand your needs first and provide a custom quote. Book a free consultation and we'll figure out the best plan for your budget.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>How long does it take to build a website?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>A standard WordPress website typically takes 1–3 weeks depending on the number of pages, complexity, and how quickly you provide content and feedback. E-commerce websites may take 3–5 weeks. I always give you a clear timeline before we start.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Do you work with clients outside Nigeria?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Absolutely! I work with clients across Nigeria and internationally. All my work is done remotely so location is never a barrier. I've worked with brands and businesses beyond Nigeria and I welcome clients from anywhere in the world.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>What email marketing tools do you use?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>I'm experienced with several industry-leading tools including Mailchimp, Brevo (Sendinblue), ActiveCampaign, Klaviyo, and ConvertKit. I can work with whatever platform you currently use or recommend the best one for your business needs and budget.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>How do I get started working with you?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Getting started is simple! Book a free 15-minute consultation via my Calendly link, send me a WhatsApp message, or fill out the contact form on this page. We'll discuss your goals, I'll ask a few questions, and then I'll send you a proposal. No pressure, no commitment required for the first call.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Do you offer support after a project is completed?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes! All website projects include post-launch support (1 month for Business package, 3 months for Premium). After that, I offer ongoing maintenance and support packages. For email marketing clients, I'm available for continuous campaign management and optimization on a retainer basis.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>What results can I expect from email marketing?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Results vary depending on your industry, list quality, and strategy — but my campaigns have achieved 70–89% open rates (industry average is 20%), generated 4,000+ leads, and driven up to 75% sales growth for clients. I focus on measurable, data-driven results that directly impact your bottom line.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Can you work with my existing website?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes! If you already have a WordPress website, I can improve, redesign, or optimize it without starting from scratch. I can also integrate email marketing tools, add landing pages, improve speed, and fix any design or functionality issues you're experiencing.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Do I need a large email list to get started?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Not at all! Many of my clients start with zero subscribers. I help you build your list from scratch through lead generation strategies, opt-in forms, and audience segmentation. The quality of your list matters far more than the size — even a small, engaged list can drive significant results.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Will my website be mobile-friendly?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Absolutely! Every website I build is fully responsive and mobile-optimized. With over 60% of web traffic coming from mobile devices, mobile-friendliness is not optional — it's a priority. I test every site across multiple screen sizes before delivery to ensure a perfect experience on all devices.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>How do you handle payments?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>I accept payments via bank transfer (Nigerian accounts), and international payment methods for overseas clients. For larger projects, I typically require a 50% deposit before starting and the remaining 50% upon completion. Payment terms are always clearly outlined in the project proposal.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>What makes you different from other freelancers?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>I combine two powerful skills — email marketing and web design — meaning I don't just build you a website, I build a complete digital system designed to attract, engage, and convert customers. My campaigns have real, documented results and I'm committed to transparency, communication, and delivering measurable ROI for every client.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Do you sign contracts or NDAs?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes! I believe in professional, transparent working relationships. For every project I provide a clear written agreement outlining the scope, timeline, deliverables, and payment terms. I'm also happy to sign NDAs if required to protect your business information.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>How do I contact you?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>You can reach me through multiple channels: fill out the contact form on this page, send me an email at akannitoheeb08@gmail.com, message me on WhatsApp at +234 814 949 3902, or connect with me on LinkedIn and Instagram. I typically respond within 24 hours on business days.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ Structured Data for Google Rich Snippets -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What services does Toheeb Akanni offer?", "acceptedAnswer": {"@type": "Answer", "text": "Toheeb Akanni offers email marketing strategy, copywriting, automation, and campaigns, as well as WordPress website design including responsive websites, landing pages, and e-commerce solutions."}},
+    {"@type": "Question", "name": "How much does Toheeb Akanni charge for services?", "acceptedAnswer": {"@type": "Answer", "text": "Pricing depends on the scope of your project. Toheeb offers flexible packages and custom quotes. Book a free consultation to discuss your budget and needs."}},
+    {"@type": "Question", "name": "Does Toheeb Akanni work with international clients?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Toheeb works with clients across Nigeria and internationally. All work is done remotely so location is never a barrier."}},
+    {"@type": "Question", "name": "What results can I expect from email marketing with Toheeb Akanni?", "acceptedAnswer": {"@type": "Answer", "text": "Toheeb's campaigns have achieved 70-89% open rates, generated 4,000+ leads, and driven up to 75% sales growth for clients."}},
+    {"@type": "Question", "name": "How do I get started working with Toheeb Akanni?", "acceptedAnswer": {"@type": "Answer", "text": "Book a free 15-minute consultation via Calendly, send a WhatsApp message, or fill out the contact form at toheebakanni.name.ng."}}
+  ]
+}
+</script>
 
 <!-- CONTACT -->
 <section id="contact">
