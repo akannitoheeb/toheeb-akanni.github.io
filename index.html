@@ -1352,7 +1352,7 @@
     }, 500);
   }
   document.addEventListener('mouseleave', function(e) { if (e.clientY <= 0) showPopup(); });
-  setTimeout(function() { if (!popupShown) showPopup(); }, 45000);
+  setTimeout(function() { if (!popupShown) showPopup(); }, 25000);
   document.getElementById('popupOverlay').addEventListener('click', function(e) { if (e.target === this) closePopup(); });
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePopup(); });
 </script>
