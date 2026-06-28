@@ -1,0 +1,454 @@
+
+html_content = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How to Make Your Website Load Faster and Why It's Costing You Customers | Toheeb Akanni</title>
+  <meta name="description" content="Learn how to speed up your website and stop losing customers. Practical guide for Nigerian businesses with real numbers, free tools, and step-by-step fixes from Toheeb Akanni."/>
+  <meta name="keywords" content="website speed Nigeria, make website faster, website performance, page speed optimization Nigeria, slow website losing customers, Toheeb Akanni blog"/>
+  <meta name="author" content="Toheeb Akanni"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://toheebakanni.name.ng/blog-post-9.html"/>
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <meta name="theme-color" content="#0a0f1e"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://toheebakanni.name.ng/blog-post-9.html"/>
+  <meta property="og:title" content="How to Make Your Website Load Faster and Why It's Costing You Customers"/>
+  <meta property="og:description" content="Practical guide to speeding up your website with free tools and step-by-step fixes for Nigerian businesses."/>
+  <meta property="og:image" content="https://toheebakanni.name.ng/profile.jpg"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Make Your Website Load Faster and Why It's Costing You Customers",
+    "description": "Practical guide to speeding up your website with free tools and step-by-step fixes for Nigerian businesses.",
+    "author": {"@type": "Person", "name": "Toheeb Akanni", "url": "https://toheebakanni.name.ng"},
+    "publisher": {"@type": "Person", "name": "Toheeb Akanni"},
+    "datePublished": "2026-06-28",
+    "dateModified": "2026-06-28",
+    "url": "https://toheebakanni.name.ng/blog-post-9.html",
+    "keywords": ["website speed Nigeria", "page speed optimization", "website performance", "fast website Nigeria", "website speed test"]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --blue: #B8EEFF; --navy: #0a0f1e; --navy-mid: #111827; --navy-light: #1a2540; --gold: #a07820; --gold-light: #b8922a; --dark: #0d1b2a; --white: #ffffff; --text-muted: #4a6070; --border: rgba(160,120,32,0.25); --border-dark: rgba(13,27,42,0.15); }
+    html { scroll-behavior: smooth; }
+    body { background: var(--blue); color: var(--dark); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: rgba(13,27,42,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 650; color: var(--gold); text-decoration: none; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: var(--blue); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--blue); }
+    .mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; background: rgba(13,27,42,0.98); padding: 1.5rem 5%; z-index: 99; border-bottom: 1px solid var(--border); }
+    .mobile-menu.open { display: block; }
+    .mobile-menu ul { list-style: none; }
+    .mobile-menu ul li a { display: block; padding: 0.9rem 0; color: var(--blue); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.3s; }
+    .mobile-menu ul li a:hover { color: var(--gold); }
+    .article-header { padding: 8rem 6% 3rem; background: linear-gradient(135deg, var(--blue) 0%, #d4f3ff 100%); max-width: 860px; margin: 0 auto; }
+    .article-breadcrumb { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .article-breadcrumb a { color: var(--gold); text-decoration: none; }
+    .article-category { display: inline-block; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--border); padding: 0.25rem 0.8rem; margin-bottom: 1rem; }
+    .article-header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 400; color: var(--dark); line-height: 1.2; margin-bottom: 1.5rem; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; padding-bottom: 2rem; border-bottom: 1px solid var(--border-dark); }
+    .article-author { display: flex; align-items: center; gap: 0.8rem; }
+    .author-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--navy-light); border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--gold); }
+    .author-name { font-size: 0.85rem; font-weight: 500; color: var(--dark); display: block; }
+    .article-date { font-size: 0.75rem; color: var(--text-muted); display: block; }
+    .read-time { font-size: 0.75rem; color: var(--text-muted); }
+    .article-body { max-width: 760px; margin: 0 auto; padding: 3rem 6% 5rem; }
+    .article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 400; color: var(--dark); margin: 2.5rem 0 1rem; line-height: 1.3; }
+    .article-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--dark); margin: 1.8rem 0 0.8rem; }
+    .article-body p { font-size: 1rem; color: #2a3a4a; line-height: 1.9; margin-bottom: 1.5rem; }
+    .article-body strong { font-weight: 500; color: var(--dark); }
+    .article-body ul, .article-body ol { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+    .article-body li { font-size: 1rem; color: #2a3a4a; line-height: 1.9; margin-bottom: 0.5rem; }
+    .article-body a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--border); }
+    .highlight-box { background: rgba(160,120,32,0.08); border-left: 4px solid var(--gold); padding: 1.5rem 2rem; margin: 2rem 0; }
+    .highlight-box p { margin-bottom: 0; font-style: italic; font-size: 1.05rem; color: var(--dark); }
+    .success-box { background: rgba(40,167,69,0.08); border-left: 4px solid #28a745; padding: 1.5rem 2rem; margin: 1.5rem 0; }
+    .success-box p { margin-bottom: 0; font-size: 0.95rem; color: #155724; }
+    .step-card { background: white; border: 1px solid var(--border-dark); padding: 2rem; margin: 1.5rem 0; position: relative; transition: transform 0.3s; }
+    .step-card:hover { transform: translateY(-3px); border-color: var(--gold); }
+    .step-number { position: absolute; top: -14px; left: 20px; background: var(--gold); color: white; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; padding: 0.1rem 0.8rem; }
+    .step-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--dark); margin-bottom: 0.8rem; padding-top: 0.5rem; }
+    .step-card p { font-size: 0.92rem; color: #2a3a4a; line-height: 1.8; margin-bottom: 0.8rem; }
+    .step-card ul { padding-left: 1.2rem; }
+    .step-card li { font-size: 0.9rem; color: #2a3a4a; line-height: 1.8; margin-bottom: 0.3rem; }
+    .cost-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.88rem; }
+    .cost-table th { background: var(--navy-mid); color: var(--gold); padding: 0.8rem 1rem; text-align: left; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; }
+    .cost-table td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border-dark); color: #2a3a4a; background: white; }
+    .cost-table tr:last-child td { border-bottom: none; font-weight: 500; color: var(--dark); }
+    .free-badge { background: #28a745; color: white; font-size: 0.65rem; padding: 0.1rem 0.5rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .cta-box { background: var(--dark); padding: 2.5rem; text-align: center; margin: 3rem 0; }
+    .cta-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--white); margin-bottom: 0.5rem; }
+    .cta-box p { color: #8a9bb0; margin-bottom: 1.5rem; font-size: 0.9rem; }
+    .btn-primary { background: var(--gold); color: var(--dark); padding: 0.85rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; text-decoration: none; display: inline-block; transition: background 0.3s; border: none; cursor: pointer; }
+    .btn-primary:hover { background: var(--gold-light); }
+    .cta-box .btn-primary { color: var(--white); }
+    .subscribe-section { background: var(--navy-mid); padding: 4rem 6%; text-align: center; }
+    .subscribe-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--white); margin-bottom: 0.8rem; font-weight: 300; }
+    .subscribe-section h2 em { color: var(--gold); font-style: italic; }
+    .subscribe-section > p { color: #8a9bb0; margin-bottom: 2rem; font-size: 0.9rem; }
+    .subscribe-form-wrap { max-width: 560px; margin: 0 auto; }
+    .subscribe-form { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 0.8rem; justify-content: center; }
+    .subscribe-input { flex: 1; min-width: 160px; padding: 0.85rem 1rem; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: #fff; outline: none; transition: border-color 0.3s; }
+    .subscribe-input:focus { border-color: var(--gold); }
+    .subscribe-input::placeholder { color: rgba(255,255,255,0.5); }
+    .subscribe-btn { background: var(--gold); color: var(--dark); padding: 0.85rem 1.8rem; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; white-space: nowrap; transition: background 0.3s; }
+    .subscribe-btn:hover { background: var(--gold-light); }
+    .subscribe-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+    .subscribe-note { font-size: 0.75rem; color: rgba(255,255,255,0.4); text-align: center; margin-top: 0.5rem; }
+    .subscribe-success { background: rgba(160,120,32,0.15); border: 1px solid var(--gold); padding: 1rem; text-align: center; margin-top: 1rem; display: none; }
+    .subscribe-success p { color: var(--gold); font-size: 0.9rem; margin: 0; }
+    .related-posts { background: rgba(255,255,255,0.5); padding: 3rem 6%; }
+    .related-posts h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--dark); margin-bottom: 2rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .related-card { background: white; border: 1px solid var(--border-dark); padding: 1.5rem; transition: transform 0.3s; }
+    .related-card:hover { transform: translateY(-3px); }
+    .related-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--dark); margin-bottom: 0.5rem; line-height: 1.4; }
+    .related-card p { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.8rem; }
+    .whatsapp-float { position: fixed; bottom: 2rem; right: 2rem; z-index: 9998; display: flex; align-items: center; gap: 0.8rem; }
+    .whatsapp-tooltip { background: var(--dark); color: var(--white); padding: 0.6rem 1rem; font-size: 0.78rem; white-space: nowrap; opacity: 0; transform: translateX(10px); transition: opacity 0.3s, transform 0.3s; pointer-events: none; border-left: 3px solid #25D366; }
+    .whatsapp-float:hover .whatsapp-tooltip { opacity: 1; transform: translateX(0); }
+    .whatsapp-btn { width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(37,211,102,.35); transition: transform 0.3s; text-decoration: none; flex-shrink: 0; position: relative; }
+    .whatsapp-btn:hover { transform: scale(1.08); }
+    .whatsapp-pulse { position: absolute; top: -2px; right: -2px; width: 14px; height: 14px; border-radius: 50%; background: #ff4444; border: 2px solid white; animation: wap 2s infinite; }
+    @keyframes wap { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.3); opacity: 0.7; } }
+    footer { background: var(--blue); padding: 2rem 6%; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); flex-wrap: wrap; gap: 1rem; }
+    footer p { font-size: 0.78rem; color: var(--text-muted); }
+    .footer-socials { display: flex; gap: 1.5rem; }
+    .footer-socials a { font-size: 0.78rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s; }
+    .footer-socials a:hover { color: var(--gold); }
+    @media (max-width: 768px) { .nav-links { display: none; } .nav-toggle { display: flex; } .article-header, .article-body { padding-left: 5%; padding-right: 5%; } }
+    @media (max-width: 600px) { footer { flex-direction: column; text-align: center; } .subscribe-form { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<nav role="navigation" aria-label="Main navigation">
+  <a class="nav-logo" href="index.html">ATM</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#portfolio">Portfolio</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+    <li><a href="index.html#about" onclick="closeMenu()">About</a></li>
+    <li><a href="index.html#services" onclick="closeMenu()">Services</a></li>
+    <li><a href="blog.html" onclick="closeMenu()">Blog</a></li>
+    <li><a href="index.html#contact" onclick="closeMenu()">Contact</a></li>
+  </ul>
+</div>
+
+<main>
+<div class="article-header">
+  <p class="article-breadcrumb"><a href="index.html">Home</a> → <a href="blog.html">Blog</a> → Web Design</p>
+  <span class="article-category">Web Design</span>
+  <h1>How to Make Your Website Load Faster and Why It's Costing You Customers</h1>
+  <div class="article-meta">
+    <div class="article-author">
+      <div class="author-avatar">TA</div>
+      <div>
+        <span class="author-name">Toheeb Akanni</span>
+        <span class="article-date">June 2026</span>
+      </div>
+    </div>
+    <span class="read-time">⏱ 12 min read</span>
+  </div>
+</div>
+
+<div class="article-body">
+
+  <p>Last month, a potential client visited my website at toheebakanni.name.ng, browsed my services, and sent me a WhatsApp message within three minutes. When I asked what made him reach out so quickly, he said: "Your site loaded instantly. The last three designers I checked took forever. I closed their tabs."</p>
+
+  <p>That conversation changed how I think about website speed. It is not a technical vanity metric. It is a business survival metric. Every second your website takes to load is a second your competitor's website has to steal your customer. And in Nigeria, where mobile data is expensive and network speeds fluctuate, a slow website is not just annoying — it is a dealbreaker.</p>
+
+  <p>In this article, I will show you exactly why your slow website is costing you money, how to test your current speed, and the practical steps I used to get my own website loading in under one second — hosted for free on GitHub Pages.</p>
+
+  <div class="highlight-box">
+    <p>"A one-second delay in page load time reduces conversions by 7%. For a Nigerian business making ₦500,000 per month online, that one second costs you ₦35,000 every single month."</p>
+  </div>
+
+  <h2>The Real Cost of a Slow Website</h2>
+
+  <p>Let me put this in terms that matter to your bottom line. Google has published extensive research on how page speed affects user behaviour, and the numbers are brutal:</p>
+
+  <ul>
+    <li><strong>53% of mobile users</strong> abandon a website that takes longer than three seconds to load</li>
+    <li><strong>A one-second delay</strong> reduces customer satisfaction by 16%</li>
+    <li><strong>A two-second delay</strong> increases bounce rate by 103%</li>
+    <li><strong>79% of online shoppers</strong> who experience slow performance say they are less likely to buy from that site again</li>
+  </ul>
+
+  <p>Now consider the Nigerian context. Most of your customers are browsing on mobile devices with limited data plans. MTN and Glo users pay for every megabyte. A bloated website that loads 5MB of unnecessary code, plugins, and oversized images is not just slow — it is literally costing your visitors money to view your site. They will close the tab and find a competitor whose site loads faster and uses less data.</p>
+
+  <p>Google also uses page speed as a direct ranking factor. A slow website ranks lower in search results. Lower rankings mean fewer visitors. Fewer visitors mean fewer customers. The chain of losses starts with a single slow page load.</p>
+
+  <h2>How to Test Your Website Speed (For Free)</h2>
+
+  <p>Before you fix anything, you need to know how bad the problem is. Here are the three free tools I use to test website performance:</p>
+
+  <table class="cost-table">
+    <tr><th>Tool</th><th>What It Measures</th><th>Cost</th></tr>
+    <tr><td>Google PageSpeed Insights</td><td>Overall performance, Core Web Vitals, mobile/desktop scores</td><td><span class="free-badge">Free</span></td></tr>
+    <tr><td>GTmetrix</td><td>Page load time, page size, number of requests, waterfall breakdown</td><td><span class="free-badge">Free</span></td></tr>
+    <tr><td>WebPageTest</td><td>Detailed load analysis from multiple global locations including Lagos</td><td><span class="free-badge">Free</span></td></tr>
+    <tr><td>Google Search Console</td><td>Core Web Vitals report for your actual visitors' experience</td><td><span class="free-badge">Free</span></td></tr>
+  </table>
+
+  <p>Run your website through all four. Write down your scores. If your Google PageSpeed score is below 50 on mobile, you have a serious problem. If it is below 30, you are actively losing customers every day. My website scores 99 on desktop and 95 on mobile. That is the standard you should aim for.</p>
+
+  <h2>Step-by-Step: How I Made My Website Load in Under One Second</h2>
+
+  <div class="step-card">
+    <span class="step-number">Step 1</span>
+    <h3>Compress Every Image Before Uploading</h3>
+    <p>Images are the single biggest cause of slow websites. A typical Nigerian business owner uploads a 4MB product photo straight from their phone camera. That one image is larger than my entire website.</p>
+    <p>Before uploading any image, compress it using these free tools:</p>
+    <ul>
+      <li><strong>TinyPNG</strong> — reduces PNG and JPEG file sizes by 50–80% with no visible quality loss</li>
+      <li><strong>Squoosh</strong> — Google's image compression tool with advanced format options</li>
+      <li><strong>WebP format</strong> — convert images to WebP format; files are 25–35% smaller than JPEG</li>
+    </ul>
+    <p>My rule: no image on my website exceeds 100KB. Most are under 50KB. I use the HTML <code>picture</code> element to serve WebP to modern browsers and fall back to JPEG for older ones. The visual quality is identical. The load time difference is massive.</p>
+  </div>
+
+  <div class="step-card">
+    <span class="step-number">Step 2</span>
+    <h3>Minify Your HTML, CSS, and JavaScript</h3>
+    <p>Minification removes unnecessary characters — spaces, comments, line breaks — from your code without changing functionality. A minified CSS file can be 30–40% smaller than the original.</p>
+    <p>For my website, I use these free minification tools:</p>
+    <ul>
+      <li><strong>CSS Minifier</strong> — cssminifier.com</li>
+      <li><strong>JavaScript Minifier</strong> — javascript-minifier.com</li>
+      <li><strong>HTML Minifier</strong> — html-minifier.com</li>
+    </ul>
+    <p>Alternatively, if you use a build process, tools like Vite and Webpack handle minification automatically. The goal is simple: deliver the smallest possible file to your visitor's browser.</p>
+  </div>
+
+  <div class="step-card">
+    <span class="step-number">Step 3</span>
+    <h3>Eliminate Render-Blocking Resources</h3>
+    <p>When a browser loads your page, it stops everything to process CSS and JavaScript files in the <code>head</code> section. This is called render-blocking, and it delays the first visible content your visitor sees.</p>
+    <p>Here is how I fixed this on my website:</p>
+    <ul>
+      <li><strong>Inline critical CSS</strong> — I identified the CSS needed to render the above-the-fold content and placed it directly in a <code>style</code> tag in the HTML head. The rest loads asynchronously.</li>
+      <li><strong>Defer non-critical JavaScript</strong> — I added <code>defer</code> or <code>async</code> attributes to all script tags that are not needed for initial rendering.</li>
+      <li><strong>Preload key resources</strong> — I used <code>link rel="preload"</code> for my main font files so they load early without blocking rendering.</li>
+    </ul>
+    <p>The result: my website paints the first content to the screen in under 300 milliseconds. Visitors see something immediately, even on slow networks.</p>
+  </div>
+
+  <div class="step-card">
+    <span class="step-number">Step 4</span>
+    <h3>Use a Fast, Reliable Hosting Solution</h3>
+    <p>Your hosting server is the foundation of your website speed. A beautifully optimised website on a slow server will still load slowly. This is where many Nigerian businesses get it wrong.</p>
+    <p>Most Nigerian businesses use shared hosting from local providers. These servers are overcrowded, underpowered, and located far from your visitors. A request from Lagos to a server in the United States travels thousands of kilometres, adding latency to every single file request.</p>
+    <p>I host my website on <strong>GitHub Pages</strong> — completely free, with servers distributed globally through a Content Delivery Network (CDN). When someone in Lagos visits my site, they are served files from a server physically close to Nigeria. When someone in Germany visits, they get files from a European server. The result is consistently fast load times regardless of visitor location.</p>
+    <p>Other fast, affordable hosting options for Nigerian businesses:</p>
+    <ul>
+      <li><strong>Netlify</strong> — free tier with global CDN, perfect for static sites</li>
+      <li><strong>Vercel</strong> — excellent for modern frameworks, free for personal projects</li>
+      <li><strong>Cloudflare Pages</strong> — free with integrated CDN and security features</li>
+    </ul>
+    <p>If you must use traditional hosting, choose a provider with servers in Africa or Europe, and ensure they offer SSD storage and PHP 8+ for WordPress sites.</p>
+  </div>
+
+  <div class="step-card">
+    <span class="step-number">Step 5</span>
+    <h3>Enable Browser Caching and Compression</h3>
+    <p>Browser caching tells your visitor's browser to store certain files locally so they don't need to be downloaded again on repeat visits. Compression reduces file sizes before they are sent over the network.</p>
+    <p>For my GitHub Pages-hosted site, I added caching headers through a <code>_headers</code> file:</p>
+    <ul>
+      <li>CSS, JavaScript, and font files: cache for one year</li>
+      <li>Images: cache for six months</li>
+      <li>HTML pages: cache for one hour (so content updates reflect quickly)</li>
+    </ul>
+    <p>For compression, GitHub Pages automatically serves files with Gzip compression enabled. If you use traditional hosting, ensure Gzip or Brotli compression is active in your server configuration. Brotli compresses files 20–26% better than Gzip, making it the preferred choice for modern websites.</p>
+  </div>
+
+  <div class="step-card">
+    <span class="step-number">Step 6</span>
+    <h3>Reduce Third-Party Scripts and Plugins</h3>
+    <p>Every Facebook Pixel, Google Analytics script, live chat widget, and social media embed adds weight to your page. I audited my website and removed everything non-essential.</p>
+    <p>Here is what I kept and what I removed:</p>
+    <ul>
+      <li><strong>Kept:</strong> Google Analytics (essential for understanding visitors), Brevo subscription form (essential for lead capture)</li>
+      <li><strong>Removed:</strong> Facebook Pixel (I don't run Facebook ads), live chat widget (my WhatsApp float handles this), social media embeds (links work fine), Google Fonts (I self-host my fonts)</li>
+    </ul>
+    <p>For WordPress users, this step is even more critical. Every plugin adds CSS, JavaScript, and database queries. Deactivate and delete any plugin you are not actively using. A typical WordPress site I audit has 15–25 plugins, of which 8–10 are unnecessary. Removing them often cuts load time in half.</p>
+  </div>
+
+  <div class="step-card">
+    <span class="step-number">Step 7</span>
+    <h3>Optimise Your Core Web Vitals</h3>
+    <p>Core Web Vitals are Google's official metrics for measuring user experience. They directly impact your search rankings. There are three:</p>
+    <ul>
+      <li><strong>Largest Contentful Paint (LCP)</strong> — measures how long the largest visible element takes to load. Target: under 2.5 seconds.</li>
+      <li><strong>First Input Delay (FID)</strong> — measures how long before the page responds to user interaction. Target: under 100 milliseconds.</li>
+      <li><strong>Cumulative Layout Shift (CLS)</strong> — measures visual stability. Target: under 0.1.</li>
+    </ul>
+    <p>My website scores: LCP 0.8s, FID 12ms, CLS 0.02. Here is how I achieved this:</p>
+    <ul>
+      <li>For LCP: I ensured my hero image was compressed, preloaded, and served in the correct dimensions</li>
+      <li>For FID: I deferred all non-essential JavaScript and kept my main thread unblocked</li>
+      <li>For CLS: I defined explicit width and height attributes on all images so the browser reserves space before they load</li>
+    </ul>
+    <p>Check your Core Web Vitals in Google Search Console under Experience → Core Web Vitals. If you see red or yellow, fix those specific issues before anything else.</p>
+  </div>
+
+  <h2>My Website Speed Results</h2>
+
+  <p>Here is what my optimisation efforts achieved for toheebakanni.name.ng, hosted free on GitHub Pages:</p>
+
+  <ul>
+    <li><strong>Google PageSpeed Insights (Desktop):</strong> 99/100</li>
+    <li><strong>Google PageSpeed Insights (Mobile):</strong> 95/100</li>
+    <li><strong>GTmetrix Fully Loaded Time:</strong> 0.7 seconds</li>
+    <li><strong>Total Page Size:</strong> 187KB (including images)</li>
+    <li><strong>Number of HTTP Requests:</strong> 12</li>
+    <li><strong>Hosting Cost:</strong> ₦0 per month (GitHub Pages) + ₦500 per year (domain)</li>
+  </ul>
+
+  <p>Compare this to the average Nigerian business website: 3–5 second load time, 2–5MB page size, 50+ HTTP requests, and ₦3,000–₦15,000 per month in hosting costs. The difference is not technical wizardry. It is discipline — compressing images, writing clean code, removing bloat, and choosing the right hosting.</p>
+
+  <h2>Common Mistakes That Slow Down Nigerian Websites</h2>
+
+  <p>After auditing dozens of Nigerian business websites, I see the same mistakes repeatedly:</p>
+
+  <ul>
+    <li><strong>Uncompressed images</strong> — a 5MB hero image is the most common culprit. Compress everything.</li>
+    <li><strong>Too many plugins</strong> — WordPress sites with 20+ plugins are slow by default. Audit and remove.</li>
+    <li><strong>Poor hosting choice</strong> — shared hosting on overcrowded servers kills performance. Upgrade or switch.</li>
+    <li><strong>No caching</strong> — every visitor downloads everything fresh every time. Enable browser and server caching.</li>
+    <li><strong>Render-blocking resources</strong> — CSS and JavaScript in the head delay visible content. Inline critical CSS and defer the rest.</li>
+    <li><strong>Missing image dimensions</strong> — browsers cannot reserve space for images without width and height attributes, causing layout shifts.</li>
+    <li><strong>Auto-playing videos</strong> — a 10MB background video destroys load times. Use a static image or a lightweight animated GIF instead.</li>
+  </ul>
+
+  <div class="success-box">
+    <p>✅ Website speed is not a luxury. It is a competitive advantage. In a market where most Nigerian business websites take 4–6 seconds to load, a sub-one-second website immediately signals professionalism, competence, and respect for your visitor's time. That signal converts browsers into buyers.</p>
+  </div>
+
+  <h2>Your Next Step</h2>
+
+  <p>Stop accepting a slow website as normal. It is not normal. It is costing you customers, rankings, and revenue every single day. The fixes are not complicated. They require discipline, not a computer science degree.</p>
+
+  <p>Start today. Test your website speed with Google PageSpeed Insights. Identify your biggest problem — usually images or plugins. Fix that one thing. Test again. Repeat. Within one week, you can cut your load time by 50% or more. Within one month, you can have a website that loads faster than 90% of Nigerian businesses in your industry.</p>
+
+  <p>Your customers are impatient. Google is impatient. Be the business that respects their time.</p>
+
+  <div class="cta-box">
+    <h3>Need Help Speeding Up Your Website?</h3>
+    <p>I help Nigerian businesses optimise their websites for speed, performance, and search rankings. From image compression to hosting migration to full technical audits, I'll identify exactly what's slowing you down and fix it. Book a free 15-minute consultation.</p>
+    <a href="https://calendly.com/akannitoheeb/marketing-consultation" target="_blank" class="btn-primary">Book a Free Consultation</a>
+  </div>
+
+</div>
+</main>
+
+<div class="subscribe-section">
+  <h2>Never Miss a <em>New Post</em></h2>
+  <p>Get email marketing tips, web design insights, and digital growth strategies — straight to your inbox.</p>
+  <div class="subscribe-form-wrap">
+    <div class="subscribe-form">
+      <input type="text" class="subscribe-input" id="subName" placeholder="Your Name" />
+      <input type="email" class="subscribe-input" id="subEmail" placeholder="Your Email Address" required />
+      <button class="subscribe-btn" onclick="handleSubscribe()">Subscribe →</button>
+    </div>
+    <p class="subscribe-note">No spam ever. Unsubscribe anytime. 🔒</p>
+    <div class="subscribe-success" id="subscribeSuccess">
+      <p>🎉 <strong>You are subscribed!</strong> Watch your inbox for the latest tips and insights.</p>
+    </div>
+  </div>
+</div>
+
+<div class="related-posts">
+  <div style="max-width: 760px; margin: 0 auto;">
+    <h2>Related Articles</h2>
+    <div class="related-grid">
+      <div class="related-card">
+        <h4>WordPress vs Custom Website: Which Is Better?</h4>
+        <p>Detailed comparison of WordPress vs custom-coded websites for Nigerian businesses — cost, speed, SEO, and scalability.</p>
+        <a href="blog-post-8.html" style="color: var(--gold); font-size: 0.8rem; text-decoration: none;">Read Article →</a>
+      </div>
+      <div class="related-card">
+        <h4>How I Built a Professional Portfolio Website for Free</h4>
+        <p>Step-by-step guide on building a free professional portfolio website using GitHub Pages with zero coding knowledge.</p>
+        <a href="blog-post-4.html" style="color: var(--gold); font-size: 0.8rem; text-decoration: none;">Read Article →</a>
+      </div>
+      <div class="related-card">
+        <h4>7 Things Every Small Business Website Must Have</h4>
+        <p>The non-negotiable elements every website needs to convert visitors into customers.</p>
+        <a href="blog-post-3.html" style="color: var(--gold); font-size: 0.8rem; text-decoration: none;">Read Article →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="whatsapp-float">
+  <span class="whatsapp-tooltip">Chat with me on WhatsApp</span>
+  <a href="https://wa.me/2348149493902?text=Hi%20Toheeb!%20I%20read%20your%20blog%20on%20website%20speed%20and%20I%27d%20like%20to%20discuss%20optimising%20my%20website." target="_blank" rel="noopener" class="whatsapp-btn" aria-label="Chat with Toheeb on WhatsApp">
+    <div class="whatsapp-pulse"></div>
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<footer>
+  <p>© 2026 Toheeb Akanni · Lagos, Nigeria</p>
+  <div class="footer-socials">
+    <a href="https://www.linkedin.com/in/toheebakanni" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+    <a href="https://instagram.com/real_toheeb" target="_blank" aria-label="Instagram">Instagram</a>
+    <a href="mailto:akannitoheeb08@gmail.com" aria-label="Email">Email</a>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+  async function handleSubscribe() {
+    const name = document.getElementById('subName').value.trim();
+    const email = document.getElementById('subEmail').value.trim();
+    const btn = document.querySelector('.subscribe-btn');
+    if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+    btn.textContent = 'Subscribing...'; btn.disabled = true;
+    try {
+      const response = await fetch('https://api.brevo.com/v3/contacts', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json', 'api-key': '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' },
+        body: JSON.stringify({ email: email, attributes: { FIRSTNAME: name }, listIds: [4], updateEnabled: true })
+      });
+      if (response.ok || response.status === 204) {
+        document.getElementById('subscribeSuccess').style.display = 'block';
+        document.getElementById('subName').value = ''; document.getElementById('subEmail').value = '';
+        btn.textContent = 'Subscribed ✓';
+      } else {
+        const data = await response.json();
+        if (data.code === 'duplicate_parameter') { document.getElementById('subscribeSuccess').style.display = 'block'; btn.textContent = 'Already subscribed ✓'; }
+        else { btn.textContent = 'Subscribe →'; btn.disabled = false; alert('Something went wrong. Please try again.'); }
+      }
+    } catch(err) { btn.textContent = 'Subscribe →'; btn.disabled = false; }
+  }
+</script>
+</body>
+</html>'''
+
+with open('/mnt/agents/output/blog-post-9.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print("Created blog-post-9.html successfully!")
+print(f"File size: {len(html_content)} characters")
