@@ -14,7 +14,7 @@ sitemap_content = '''<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://toheebakanni.name.ng/profile.jpg</image:loc>
-      <image:title>Toheeb Akanni — Email Marketing Strategist & WordPress Web Designer</image:title>
+      <image:title>Toheeb Akanni — Email Marketing Strategist and WordPress Web Designer</image:title>
       <image:caption>Professional headshot of Toheeb Akanni, freelance digital marketer based in Lagos, Nigeria</image:caption>
     </image:image>
   </url>
