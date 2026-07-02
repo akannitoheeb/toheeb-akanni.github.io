@@ -346,10 +346,23 @@
     .view-campaign:hover { gap: 0.8rem; }
 
     /* ── TESTIMONIALS ── */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    .testimonials-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+    .testimonials-track {
+      display: flex;
       gap: 1.5rem;
+      width: max-content;
+      animation: scrollTestimonials 25s linear infinite;
+    }
+    .testimonials-wrapper:hover .testimonials-track {
+      animation-play-state: paused;
+    }
+    @keyframes scrollTestimonials {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
     .testimonial-card {
       background: rgba(255,255,255,0.6);
@@ -357,6 +370,8 @@
       border: 1px solid var(--border-dark);
       transition: all 0.35s;
       position: relative; overflow: hidden;
+      flex-shrink: 0;
+      width: 360px;
     }
     .testimonial-card:hover {
       border-color: var(--gold);
@@ -364,7 +379,7 @@
       background: rgba(255,255,255,0.8);
     }
     .testimonial-card::before {
-      content: '\201C';
+      content: 'C';
       font-family: 'Cormorant Garamond', serif;
       font-size: 5rem; color: var(--gold);
       opacity: 0.15;
@@ -391,8 +406,19 @@
     }
     .author-info h5 { font-weight: 700; font-size: 0.9rem; color: var(--dark); }
     .author-info p { color: var(--text-muted); font-size: 0.8rem; margin-top: 0.1rem; }
-
-    /* ── TOOLS ── */
+    /* Mobile: stack as grid */
+    @media (max-width: 768px) {
+      .testimonials-wrapper { overflow: visible; }
+      .testimonials-track {
+        animation: none;
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 1.5rem;
+      }
+      .testimonial-card { width: 100%; }
+    }
+/* ── TOOLS ── */
     .tools-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
@@ -614,7 +640,7 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .campaigns-grid, .testimonials-grid { grid-template-columns: 1fr; }
+      .campaigns-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
       .nav-links { display: none; }
@@ -640,6 +666,8 @@
     ::-webkit-scrollbar-thumb { background: var(--border-dark); border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
   </style>
+<base target="_blank">
+<base target="_blank">
 </head>
 <body>
 
@@ -866,40 +894,72 @@
   <p class="section-label">Client Reviews</p>
   <h2 class="section-title">What Clients <em>Say</em></h2>
   <p class="section-intro">Real results from real partnerships. Here's what clients say about working together.</p>
-  <div class="testimonials-grid">
-    <div class="testimonial-card">
-      <p class="quote">Toheeb completely transformed our welcome series. Open rates jumped from 22% to 74%, and we saw a 40% increase in first-time deposits within the first month.</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">MO</div>
-        <div class="author-info">
-          <h5>Michael Okafor</h5>
-          <p>Growth Lead, Fintech Startup</p>
+  <div class="testimonials-wrapper">
+    <div class="testimonials-track">
+      <div class="testimonial-card">
+        <p class="quote">Toheeb completely transformed our welcome series. Open rates jumped from 22% to 74%, and we saw a 40% increase in first-time deposits within the first month.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MO</div>
+          <div class="author-info">
+            <h5>Michael Okafor</h5>
+            <p>Growth Lead, Fintech Startup</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="testimonial-card">
-      <p class="quote">The Black Friday campaign Toheeb designed generated 4x more revenue than the previous year. The segmentation strategy was genius — every email felt personal.</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">SA</div>
-        <div class="author-info">
-          <h5>Sarah Adeyemi</h5>
-          <p>Marketing Director, E-Commerce Brand</p>
+      <div class="testimonial-card">
+        <p class="quote">The Black Friday campaign Toheeb designed generated 4x more revenue than the previous year. The segmentation strategy was genius — every email felt personal.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SA</div>
+          <div class="author-info">
+            <h5>Sarah Adeyemi</h5>
+            <p>Marketing Director, E-Commerce Brand</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="testimonial-card">
-      <p class="quote">We had 3,000 dormant subscribers. Toheeb's re-engagement campaign brought back 18% of them. That's real money back in our pipeline.</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">JE</div>
-        <div class="author-info">
-          <h5>James Eze</h5>
-          <p>CEO, B2B Services Company</p>
+      <div class="testimonial-card">
+        <p class="quote">We had 3,000 dormant subscribers. Toheeb's re-engagement campaign brought back 18% of them. That's real money back in our pipeline.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">JE</div>
+          <div class="author-info">
+            <h5>James Eze</h5>
+            <p>CEO, B2B Services Company</p>
+          </div>
+        </div>
+      </div>
+      <!-- Duplicate cards for seamless loop -->
+      <div class="testimonial-card">
+        <p class="quote">Toheeb completely transformed our welcome series. Open rates jumped from 22% to 74%, and we saw a 40% increase in first-time deposits within the first month.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MO</div>
+          <div class="author-info">
+            <h5>Michael Okafor</h5>
+            <p>Growth Lead, Fintech Startup</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="quote">The Black Friday campaign Toheeb designed generated 4x more revenue than the previous year. The segmentation strategy was genius — every email felt personal.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SA</div>
+          <div class="author-info">
+            <h5>Sarah Adeyemi</h5>
+            <p>Marketing Director, E-Commerce Brand</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="quote">We had 3,000 dormant subscribers. Toheeb's re-engagement campaign brought back 18% of them. That's real money back in our pipeline.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">JE</div>
+          <div class="author-info">
+            <h5>James Eze</h5>
+            <p>CEO, B2B Services Company</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <!-- TOOLS -->
 <section id="tools">
   <p class="section-label">Toolkit</p>
