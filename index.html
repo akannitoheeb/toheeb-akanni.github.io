@@ -393,41 +393,67 @@
     .btn-call:hover { border-color: var(--gold); color: var(--gold); }
 
     /* ── TESTIMONIALS ── */
-    #testimonials { background: var(--blue); }
-    .testimonials-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem; margin-top: 3rem;
+    #testimonials { background: var(--dark); }
+    #testimonials .section-title { color: var(--white); }
+    #testimonials .achieve-intro { color: #8a9bb0; }
+    .testimonials-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      margin-top: 3rem;
+    }
+    .testimonials-track {
+      display: flex;
+      gap: 1.5rem;
+      width: max-content;
+      animation: scrollTestimonials 25s linear infinite;
+    }
+    .testimonials-wrapper:hover .testimonials-track {
+      animation-play-state: paused;
+    }
+    @keyframes scrollTestimonials {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
     .testimonial-card {
-      background: rgba(255,255,255,0.6);
-      border: 1px solid var(--border-dark);
-      padding: 2.5rem; position: relative;
-      transition: transform 0.3s, border-color 0.3s;
+      background: var(--navy-light);
+      padding: 2rem;
+      border: 1px solid var(--border);
+      transition: all 0.35s;
+      position: relative; overflow: hidden;
+      flex-shrink: 0;
+      width: 360px;
     }
     .testimonial-card.featured { border-color: var(--gold); }
-    .testimonial-card:hover { transform: translateY(-4px); }
+    .testimonial-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
     .testimonial-quote {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 5rem; color: var(--gold); line-height: 0.8;
-      margin-bottom: 1rem; opacity: 0.5;
+      font-size: 5rem; color: var(--gold);
+      opacity: 0.15;
+      position: absolute; top: -0.5rem; right: 1.2rem;
+      line-height: 1;
     }
     .testimonial-text {
-      font-size: 1rem; color: var(--dark);
-      line-height: 1.8; margin-bottom: 1.5rem;
+      font-size: 0.95rem; color: var(--white);
+      margin-bottom: 1.5rem; line-height: 1.8;
+      position: relative; z-index: 1;
       font-family: 'Cormorant Garamond', serif;
-      font-style: italic; font-size: 1.1rem;
+      font-style: italic; font-size: 1.05rem;
     }
     .testimonial-footer {
-      border-top: 1px solid var(--border-dark);
+      border-top: 1px solid var(--border);
       padding-top: 1rem;
       display: flex; flex-direction: column; gap: 0.8rem;
     }
     .testimonial-name {
       font-weight: 500; font-size: 0.9rem;
-      color: var(--dark); display: block;
+      color: var(--white); display: block;
     }
     .testimonial-role {
-      font-size: 0.78rem; color: var(--text-muted);
+      font-size: 0.78rem; color: #8a9bb0;
       letter-spacing: 0.05em; display: block;
     }
     .testimonial-services { display: flex; flex-wrap: wrap; gap: 0.5rem; }
@@ -435,6 +461,17 @@
       font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--gold); border: 1px solid var(--border);
       padding: 0.2rem 0.6rem;
+    }
+    @media (max-width: 768px) {
+      .testimonials-wrapper { overflow: visible; }
+      .testimonials-track {
+        animation: none;
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 1.5rem;
+      }
+      .testimonial-card { width: 100%; }
     }
 
     /* ── PORTFOLIO ── */
@@ -1086,38 +1123,93 @@
 
 <!-- TESTIMONIALS -->
 <section id="testimonials">
-  <p class="section-label">Client Words</p>
+  <p class="section-label">Client Reviews</p>
   <h2 class="section-title">What Clients <em>Say</em></h2>
-  <p class="achieve-intro">Real feedback from real clients. Nothing speaks louder than results.</p>
-  <div class="testimonials-grid">
-
-    <div class="testimonial-card featured">
-      <div class="testimonial-quote">"</div>
-      <p class="testimonial-text">This is brilliant, I love it. Toheeb delivered exactly what we needed, a beautiful, functional website that truly represents our brand. Working with him was seamless from start to finish.</p>
-      <div class="testimonial-footer">
-        <div class="testimonial-info">
-          <span class="testimonial-name">Tobi Akanni</span>
-          <span class="testimonial-role">CEO · Stylebyplussy & RectangleHQ</span>
+  <p class="achieve-intro">Real results from real partnerships. Here's what clients say about working together.</p>
+  <div class="testimonials-wrapper">
+    <div class="testimonials-track">
+      <div class="testimonial-card featured">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">This is brilliant, I love it. Toheeb delivered exactly what we needed, a beautiful, functional website that truly represents our brand. Working with him was seamless from start to finish.</p>
+        <div class="testimonial-footer">
+          <div class="testimonial-info">
+            <span class="testimonial-name">Tobi Akanni</span>
+            <span class="testimonial-role">CEO · Stylebyplussy & RectangleHQ</span>
+          </div>
         </div>
-        <div class="testimonial-services">
-          <span class="service-tag">Website Design</span>
-          <span class="service-tag">Email Marketing</span>
-          <span class="service-tag">Social Media</span>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">Toheeb completely transformed our welcome series. Open rates jumped from 22% to 74%, and we saw a 40% increase in first-time deposits within the first month.</p>
+        <div class="testimonial-footer">
+          <div class="testimonial-info">
+            <span class="testimonial-name">Michael Okafor</span>
+            <span class="testimonial-role">Growth Lead, Fintech Startup</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">The Black Friday campaign Toheeb designed generated 4x more revenue than the previous year. The segmentation strategy was genius — every email felt personal.</p>
+        <div class="testimonial-footer">
+          <div class="testimonial-info">
+            <span class="testimonial-name">Sarah Adeyemi</span>
+            <span class="testimonial-role">Marketing Director, E-Commerce Brand</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">We had 3,000 dormant subscribers. Toheeb's re-engagement campaign brought back 18% of them. That's real money back in our pipeline.</p>
+        <div class="testimonial-footer">
+          <div class="testimonial-info">
+            <span class="testimonial-name">James Eze</span>
+            <span class="testimonial-role">CEO, B2B Services Company</span>
+          </div>
+        </div>
+      </div>
+      <!-- Duplicate cards for seamless loop -->
+      <div class="testimonial-card featured">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">This is brilliant, I love it. Toheeb delivered exactly what we needed, a beautiful, functional website that truly represents our brand. Working with him was seamless from start to finish.</p>
+        <div class="testimonial-footer">
+          <div class="testimonial-info">
+            <span class="testimonial-name">Tobi Akanni</span>
+            <span class="testimonial-role">CEO · Stylebyplussy & RectangleHQ</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">Toheeb completely transformed our welcome series. Open rates jumped from 22% to 74%, and we saw a 40% increase in first-time deposits within the first month.</p>
+        <div class="testimonial-footer">
+          <div class="testimonial-info">
+            <span class="testimonial-name">Michael Okafor</span>
+            <span class="testimonial-role">Growth Lead, Fintech Startup</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">The Black Friday campaign Toheeb designed generated 4x more revenue than the previous year. The segmentation strategy was genius — every email felt personal.</p>
+        <div class="testimonial-footer">
+          <div class="testimonial-info">
+            <span class="testimonial-name">Sarah Adeyemi</span>
+            <span class="testimonial-role">Marketing Director, E-Commerce Brand</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">We had 3,000 dormant subscribers. Toheeb's re-engagement campaign brought back 18% of them. That's real money back in our pipeline.</p>
+        <div class="testimonial-footer">
+          <div class="testimonial-info">
+            <span class="testimonial-name">James Eze</span>
+            <span class="testimonial-role">CEO, B2B Services Company</span>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="testimonial-card placeholder">
-      <div class="testimonial-quote">"</div>
-      <p class="testimonial-text" style="opacity: 0.4; font-style: italic;">More client testimonials coming soon. I am currently collecting feedback from brands I have worked with.</p>
-      <div class="testimonial-footer">
-        <div class="testimonial-info">
-          <span class="testimonial-name" style="opacity:0.4;">Your business here</span>
-          <span class="testimonial-role" style="opacity:0.4;">Let's work together</span>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
